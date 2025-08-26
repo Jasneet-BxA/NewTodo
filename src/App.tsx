@@ -12,7 +12,7 @@ const App = () => {
           <h1>Todo App</h1>
 
           <nav className="nav-links">
-            <NavLink to="/" end >All</NavLink>
+            <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')}>All</NavLink>
             <NavLink to="/active">Active</NavLink>
             <NavLink to="/completed">Completed</NavLink>
           </nav>
