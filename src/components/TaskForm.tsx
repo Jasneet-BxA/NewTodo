@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useTasks } from "./TaskContext";
+import { useNavigate } from "react-router";
 
 const TaskForm = () => {
   const [title, setTitle] = useState("");
   const { addTask } = useTasks();
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!title.trim()) return;
     addTask(title);
     setTitle("");
+    navigate('/'); 
   };
 
   return (
